@@ -9,7 +9,7 @@ data class UserCredential(
 
     var userId: UUID,
 
-    var username: String,
+    var username: String
 )
 
 enum class UserType {

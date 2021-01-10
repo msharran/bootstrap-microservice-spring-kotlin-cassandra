@@ -1,7 +1,7 @@
 package com.fireflies.bootstrap_microservice.configuration
 
+import com.fireflies.bootstrap_microservice.AppProperties
 import com.fireflies.bootstrap_microservice.security.AuthorizationFilter
-import com.fireflies.bootstrap_microservice.security.JwtProperties
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
@@ -20,8 +20,8 @@ class SecurityConfiguration : WebSecurityConfigurerAdapter() {
             .and() // add jwt filters (1. authorization)
             .addFilter(AuthorizationFilter(authenticationManager()))
             .authorizeRequests() // configure access rules
-            .antMatchers(*JwtProperties.AUTHORIZATION_IGNORED_ENDPOINTS).permitAll()
-            .antMatchers(JwtProperties.ADMIN_ENDPOINTS).hasRole("ADMIN")
+            .antMatchers(*AppProperties.Security.AUTHORIZATION_IGNORED_ENDPOINTS).permitAll()
+            .antMatchers(AppProperties.Security.ADMIN_ENDPOINTS).hasRole("ADMIN")
             .anyRequest().authenticated()
     }
 
