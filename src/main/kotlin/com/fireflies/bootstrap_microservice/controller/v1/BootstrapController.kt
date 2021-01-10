@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*
 class BootstrapController {
 
     @GetMapping("/me")
-    suspend fun getUser(@RequestParam(required = true) username: String): ResponseEntity<APIResponse<UserCredential?>> = coroutineScope {
+    suspend fun getUser(): ResponseEntity<APIResponse<UserCredential?>> = coroutineScope {
         val user = (SecurityContextHolder.getContext().authentication.principal as? UserPrincipal)?.user
         responseOf(HttpStatus.OK) {
             user
