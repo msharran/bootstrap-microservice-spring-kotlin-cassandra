@@ -1,0 +1,9 @@
+GET http://localhost:10000/api/bootstrap/v1/me?username=sharran
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFycmFuIn0.Rv7mV3KeKTQKU_YVoSBQFpSmXnGGDKB3I6aorFHqyDhrb05DGdYGe41w-_dJssvqlEMX90cYoDlyeZbHQPaxyA
+Accept: application/json
+
+###
+
+GET http://localhost:10001/api/auth/v1/user?username=sharran
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaGFycmFuIn0.Rv7mV3KeKTQKU_YVoSBQFpSmXnGGDKB3I6aorFHqyDhrb05DGdYGe41w-_dJssvqlEMX90cYoDlyeZbHQPaxyA
+Accept: application/json
